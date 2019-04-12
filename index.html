@@ -46,13 +46,13 @@
     .button{
 
         width: 150px;
-        height: 30px;
+        height: 50px;
         color: #ffffff;
         font-size: 15px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: aqua;
+        background: deepskyblue;
         margin-top: 320px;
         border-radius: 7px;
     }
@@ -68,7 +68,7 @@
     <div id="e" class="content"></div>
     </div>
     <div class="button">
-dddddd
+       重新生成
     </div>
 
 </div>
@@ -87,6 +87,8 @@ dddddd
         return result;
     }
 
+
+
     let array = []
 
     for (let i = 0 ; i<5 ;i++) {
@@ -95,11 +97,22 @@ dddddd
 
 
     function  toCreate(){
+       // console.log(1);
+
+        array = []
+        
+        for (let i = 0 ; i<5 ;i++) {
+            array.push( Math.round(fullClose(1,35)))
+        }
+
+
         let obj1 =  document.querySelector("#a")
         let obj2 =  document.querySelector("#b")
         let obj3 =  document.querySelector("#c")
         let obj4 =  document.querySelector("#d")
         let obj5 =  document.querySelector("#e")
+
+        console.log(array);
 
         obj1.innerHTML = array[0]
         obj2.innerHTML = array[1]
@@ -111,4 +124,10 @@ dddddd
 
 
  toCreate()
+
+    let  button = document.querySelector('.button')
+
+    button.addEventListener('click' ,()=>{
+        toCreate()
+    } )
 </script>
