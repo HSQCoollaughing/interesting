@@ -55,6 +55,7 @@
         background: deepskyblue;
         margin-top: 320px;
         border-radius: 7px;
+        outline: none;
     }
 </style>
 <body>
@@ -67,9 +68,9 @@
     <div id="d"  class="content"></div>
     <div id="e" class="content"></div>
     </div>
-    <div class="button">
+    <button   class="button">
        重新生成
-    </div>
+    </button>
 
 </div>
 
@@ -125,9 +126,37 @@
 
  toCreate()
 
+
+
     let  button = document.querySelector('.button')
 
     button.addEventListener('click' ,()=>{
+        let count =6;
         toCreate()
+
+     let timer =    setInterval(()=>{
+            count-=1
+            button.innerHTML = `${count}秒重新生成`
+         button.disabled = true
+         button.style.backgroundColor = '#fff'
+         button.style.color = '#000'
+
+         if(count===0){
+
+             clearInterval(timer)
+
+             button.innerHTML = `重新生成`
+             button.disabled = false
+             button.style.backgroundColor = 'deepskyblue'
+             button.style.color = '#fff'
+         }
+
+        },1000)
+
+
+   console.log(count)
+
+
+
     } )
 </script>
